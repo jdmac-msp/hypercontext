@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Neural Registry - HyperContext</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DataCatalog",
+    "name": "My Neural Registry",
+    "version": "1.0.0",
+    "datePublished": "2024-02-08",
+    "author": { "@type": "Organization", "name": "Example Org" }
+  }
+  </script>
+
+  <script type="application/json" id="hc-metadata">
+  {
+    "hc_version": "1.1",
+    "hc_type": "registry",
+    "artifact_id": "hc-registry-example-20240208",
+    "version": "1.0.0",
+    "created": "2024-02-08T00:00:00Z",
+    "updated": "2024-02-08T00:00:00Z",
+    "classification": {
+      "category": "index",
+      "subcategory": "neural-registry",
+      "tags": ["registry", "catalog", "index"]
+    },
+    "summary": "Neural Registry indexing HC skills, frameworks, and artifacts for efficient context loading."
+  }
+  </script>
+
+  <script type="text/plain" id="hc-instructions">
+## Neural Registry - AI Instructions
+
+### Step 0: Registry Loading Protocol
+This is a Neural Registry. Use it to discover available HC artifacts.
+
+### Step 1: Scan Available Artifacts
+Review the artifact catalog below to find relevant context.
+
+### Step 2: Lazy Loading
+Only load artifacts you need. Each artifact costs ~3,000 tokens.
+Maximum recommended: 3 artifacts per session.
+
+### Step 3: Token-Efficient Alternative
+For machine loading, fetch /registry.json instead (~100 tokens).
+
+### Available Artifacts
+See the catalog table in the human documentation section.
+  </script>
+
+  <style>
+    body { font-family: system-ui; max-width: 900px; margin: 2rem auto; padding: 0 1rem; background: #0a0a0a; color: #e0e0e0; }
+    h1 { background: linear-gradient(90deg, #00d4ff, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    h2 { color: #00d4ff; border-bottom: 1px solid #333; padding-bottom: 0.5rem; }
+    .badge { background: #7c3aed; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th { background: #1a1a2e; color: #00d4ff; }
+    th, td { border: 1px solid #333; padding: 0.75rem; text-align: left; }
+    tr:hover { background: rgba(0,212,255,0.05); }
+    a { color: #00d4ff; }
+    code { background: #1a1a2e; padding: 0.2em 0.4em; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <div id="hc-human-docs">
+    <h1>My Neural Registry</h1>
+    <p>
+      <span class="badge">HC v1.1</span>
+      <span class="badge">Registry</span>
+      <span class="badge">3 Artifacts</span>
+    </p>
+
+    <p>Central index for discovering and loading HyperContext artifacts.</p>
+
+    <h2>Quick Start</h2>
+    <pre><code>Load registry from: https://example.com/registry.json
+Then load specific artifacts as needed.</code></pre>
+
+    <h2>Artifact Catalog</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Category</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><a href="/skill-newsletter">Newsletter Generator</a></td>
+        <td>skill</td>
+        <td>content-creation</td>
+        <td>Transform notes into polished newsletters</td>
+      </tr>
+      <tr>
+        <td><a href="/identity-professional">Professional Voice</a></td>
+        <td>identity</td>
+        <td>voice</td>
+        <td>Formal, authoritative communication style</td>
+      </tr>
+      <tr>
+        <td><a href="/framework-content-strategy">Content Strategy</a></td>
+        <td>framework</td>
+        <td>methodology</td>
+        <td>Framework for content planning and execution</td>
+      </tr>
+    </table>
+
+    <h2>Token Economics</h2>
+    <table>
+      <tr><th>Operation</th><th>Tokens</th></tr>
+      <tr><td>Registry scan (JSON)</td><td>~100</td></tr>
+      <tr><td>Full artifact load</td><td>~3,000</td></tr>
+      <tr><td>Recommended max</td><td>~10,200 (3 artifacts)</td></tr>
+    </table>
+
+    <h2>JSON Endpoint</h2>
+    <p>For token-efficient loading: <code>/registry.json</code></p>
+  </div>
+</body>
+</html>

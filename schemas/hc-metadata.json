@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/masterymade/hypercontext/schemas/hc-metadata.json",
+  "title": "HyperContext Metadata Schema",
+  "description": "JSON Schema for HC metadata blocks (id='hc-metadata')",
+  "type": "object",
+  "required": ["hc_version", "hc_type", "artifact_id", "version", "created", "updated", "summary"],
+  "properties": {
+    "hc_version": {
+      "type": "string",
+      "const": "1.1",
+      "description": "HyperContext specification version"
+    },
+    "hc_type": {
+      "type": "string",
+      "enum": ["registry", "skill", "artifact", "identity", "framework"],
+      "description": "Canonical artifact type"
+    },
+    "artifact_id": {
+      "type": "string",
+      "pattern": "^hc-(registry|skill|artifact|identity|framework)-[a-z0-9-]+-[0-9]+$",
+      "description": "Unique identifier: hc-[type]-[slug]-[timestamp]"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Semantic version (e.g., 1.0.0)"
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "SHA-256 hash of #hc-human-docs content"
+    },
+    "metadata_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "SHA-256 hash of metadata (excluding hash fields)"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 creation timestamp"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 last update timestamp"
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "description": "Primary category"
+        },
+        "subcategory": {
+          "type": "string",
+          "description": "Subcategory"
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Searchable tags"
+        }
+      }
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 50,
+      "maxLength": 500,
+      "description": "50-100 token description"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/masterymade/hypercontext/schemas/registry.json",
+  "title": "HyperContext Registry Schema",
+  "description": "JSON Schema for Neural Registry endpoint (/registry.json)",
+  "type": "object",
+  "required": ["hc_version", "registry_id", "artifacts"],
+  "properties": {
+    "hc_version": {
+      "type": "string",
+      "const": "1.1",
+      "description": "HyperContext specification version"
+    },
+    "registry_id": {
+      "type": "string",
+      "description": "Unique registry identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable registry name"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 last update timestamp"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "name", "url", "summary"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Artifact ID matching hc-metadata artifact_id"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["registry", "skill", "artifact", "identity", "framework"],
+            "description": "Artifact type"
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable name"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the full HC artifact"
+          },
+          "summary": {
+            "type": "string",
+            "description": "Brief description (50-100 tokens)"
+          },
+          "category": {
+            "type": "string",
+            "description": "Primary category"
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Searchable tags"
+          },
+          "version": {
+            "type": "string",
+            "description": "Artifact version"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter Generator - HyperContext Skill</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "name": "Newsletter Generator Skill",
+    "version": "1.0.0",
+    "datePublished": "2024-02-08",
+    "author": { "@type": "Organization", "name": "MasteryMade" }
+  }
+  </script>
+
+  <script type="application/json" id="hc-metadata">
+  {
+    "hc_version": "1.1",
+    "hc_type": "skill",
+    "artifact_id": "hc-skill-newsletter-generator-20240208",
+    "version": "1.0.0",
+    "created": "2024-02-08T00:00:00Z",
+    "updated": "2024-02-08T00:00:00Z",
+    "classification": {
+      "category": "content-creation",
+      "subcategory": "email-marketing",
+      "tags": ["newsletter", "email", "writing", "automation"]
+    },
+    "summary": "Transforms raw notes or bullet points into polished newsletter content with customizable tone and structure."
+  }
+  </script>
+
+  <script type="application/json" id="mastery-agent-config">
+  {
+    "agent_id": "skill-newsletter-generator-v1",
+    "execution_mode": "interactive",
+    "requires_approval": true,
+    "output_format": "hc-artifact",
+    "max_iterations": 3,
+    "quality_threshold": 8.0
+  }
+  </script>
+
+  <template id="mastery-agent-knowledge">
+---
+skill_purpose: "Transform raw content into polished newsletter format"
+inputs_required:
+  - name: "content"
+    type: "string"
+    required: true
+    description: "Raw notes, bullet points, or draft content"
+  - name: "tone"
+    type: "string"
+    required: false
+    default: "professional"
+    options: ["professional", "casual", "enthusiastic", "authoritative"]
+  - name: "audience"
+    type: "string"
+    required: false
+    description: "Target audience description"
+  - name: "cta"
+    type: "string"
+    required: false
+    description: "Call-to-action for the newsletter"
+quality_gates:
+  - "Word count between 300-800 words"
+  - "Includes compelling subject line"
+  - "Has clear sections with headers"
+  - "Ends with call-to-action if provided"
+---
+  </template>
+
+  <script type="text/plain" id="hc-instructions">
+## Newsletter Generator - AI Instructions
+
+### Step 1: Parse Input
+- Extract the raw content from user input
+- Identify key themes and topics
+- Note any specified tone or audience
+
+### Step 2: Structure the Newsletter
+Create the following sections:
+1. **Subject Line**: Compelling, under 50 characters
+2. **Preview Text**: Hook for email preview, under 100 characters
+3. **Opening**: Personal greeting and hook
+4. **Body**: 2-3 main sections with headers
+5. **Closing**: Summary and call-to-action
+
+### Step 3: Apply Tone
+Adjust language based on tone parameter:
+- Professional: Formal language, industry terms
+- Casual: Conversational, contractions, humor
+- Enthusiastic: Exclamation points, energy words
+- Authoritative: Data-driven, expert positioning
+
+### Step 4: Generate Output
+Format as clean HTML suitable for email:
+- Use inline styles only
+- Keep tables for layout
+- Ensure mobile-friendly width
+
+### Output Format
+```html
+<!-- Subject: [SUBJECT LINE] -->
+<!-- Preview: [PREVIEW TEXT] -->
+<div style="max-width: 600px; margin: 0 auto;">
+  [NEWSLETTER CONTENT]
+</div>
+```
+
+### Quality Gates
+- [ ] Subject line under 50 characters
+- [ ] Word count 300-800
+- [ ] All sections present
+- [ ] Tone matches specification
+- [ ] CTA included if provided
+  </script>
+
+  <style>
+    body { font-family: system-ui; max-width: 700px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { color: #7c3aed; }
+    .badge { background: #7c3aed; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; }
+    code { background: #f0f0f0; padding: 0.2em 0.4em; border-radius: 3px; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.5rem; text-align: left; }
+  </style>
+</head>
+<body>
+  <div id="hc-human-docs">
+    <h1>Newsletter Generator</h1>
+    <p><span class="badge">HC v1.1</span> <span class="badge">Skill</span></p>
+
+    <p>Transform raw notes or bullet points into polished newsletter content.</p>
+
+    <h2>Inputs</h2>
+    <table>
+      <tr><th>Parameter</th><th>Required</th><th>Description</th></tr>
+      <tr><td><code>content</code></td><td>Yes</td><td>Raw notes or draft content</td></tr>
+      <tr><td><code>tone</code></td><td>No</td><td>professional, casual, enthusiastic, authoritative</td></tr>
+      <tr><td><code>audience</code></td><td>No</td><td>Target audience description</td></tr>
+      <tr><td><code>cta</code></td><td>No</td><td>Call-to-action text</td></tr>
+    </table>
+
+    <h2>Usage</h2>
+    <pre><code>Load skill from: https://example.com/skill-newsletter-generator
+
+Input:
+- Content: [your notes]
+- Tone: casual
+- Audience: SaaS founders
+
+Execute skill.</code></pre>
+
+    <h2>Output</h2>
+    <p>HTML-formatted newsletter ready for email platform paste.</p>
+  </div>
+</body>
+</html>
