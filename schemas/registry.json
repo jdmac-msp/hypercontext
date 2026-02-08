@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/masterymade/hypercontext/schemas/registry.json",
+  "$id": "https://github.com/jdmac-msp/hypercontext/schemas/registry.json",
   "title": "HyperContext Registry Schema",
   "description": "JSON Schema for Neural Registry endpoint (/registry.json)",
   "type": "object",

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/masterymade/hypercontext/schemas/hc-metadata.json",
+  "$id": "https://github.com/jdmac-msp/hypercontext/schemas/hc-metadata.json",
   "title": "HyperContext Metadata Schema",
   "description": "JSON Schema for HC metadata blocks (id='hc-metadata')",
   "type": "object",
